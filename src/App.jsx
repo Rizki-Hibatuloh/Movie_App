@@ -21,7 +21,6 @@ function App() {
       const apiURL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchMoviesKeyword}`;
       const response = await fetch(apiURL);
       const respJSON = await response.json();
-
       if (
         !response.ok ||
         (respJSON.Response &&  respJSON.Response.toLowerCase() === API_RESPONSE_STATUSES.FALSE)
@@ -45,7 +44,6 @@ function App() {
     }
   };
 
-  
   useEffect(() => {
     fetchMovies();
   }, [fetchMovies]);
